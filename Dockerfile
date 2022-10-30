@@ -22,6 +22,8 @@ MAINTAINER Nico W. <info@ni-wa.de>
 
 EXPOSE 8080
 
+HEALTHCHECK --interval=10s --retries=2 CMD npx docker-healthcheck || exit 1
+
 # copy files from build stage
 COPY --from=builder /build/dist/ dist/
 COPY --from=builder /build/package*.json ./
