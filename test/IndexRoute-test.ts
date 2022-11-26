@@ -1,7 +1,7 @@
 import IndexRoute from '../src/routes/index.route';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
-import { CustomConvictConfig } from '../src';
+import { CustomConvictConfig } from '../src/config/interface';
 import { App, Config } from '@kopf02/express-utils';
 
 describe('IndexRoute', () => {
