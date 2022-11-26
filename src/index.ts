@@ -2,7 +2,6 @@ import {
   App,
   Config,
   dbConfig,
-  IDbConfig,
   logger,
 } from '@kopf02/express-utils';
 //Convict config
