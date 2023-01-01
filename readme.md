@@ -1,6 +1,6 @@
 # express-utils-example
 
-This is a example repo for how to se the [express-utils](https://github.com/Kopf02/express-utils) package by @kopf02.
+This is a example repo for how to se the [express-utils](https://github.com/Kopf02/express-utils) package by [kopf02](https://github.com/kopf02).
 
 
 # Available ENV Variables
@@ -26,4 +26,4 @@ This is a example repo for how to se the [express-utils](https://github.com/Kopf
 - [ ] Write better readme
 
 
-2022 - @Trickfilm400
+2022-2023 - [Trickfilm400](https://github.com/trickfilm400)
