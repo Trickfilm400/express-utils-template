@@ -4,4 +4,10 @@ dist/
 .nyc_output/
 coverage/
 test-results.xml
+
+
+# config files also for ever environment
 config.json
+test.json
+production.json
+development.json
