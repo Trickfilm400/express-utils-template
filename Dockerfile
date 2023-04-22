@@ -1,4 +1,4 @@
-FROM node:16-alpine3.16 AS builder
+FROM node:18-alpine3.17 AS builder
 
 WORKDIR /build
 
@@ -6,23 +6,23 @@ WORKDIR /build
 # copy only package.json files for better caching
 # (if no dependencies are changed, there is no need to reinstall them, so it is faster to use the cache)
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --fund=false
 # copy rest of src files etc.
 COPY . .
 
 # build and install only production dependencies
 RUN npm run build
 # install only production dependencies for reducing image size and security (no need for dev dependencies in prod env)
-RUN npm ci --only=production
+RUN npm ci --omit=dev --audit=false --fund=false
 
 
 ######################################################################
 
-FROM node:16-alpine3.16
+FROM node:18-alpine3.17
 
 WORKDIR /app
 
-MAINTAINER Nico W. <info@ni-wa.de>
+LABEL org.opencontainers.image.authors="Nico W. <info@ni-wa.de>"
 
 EXPOSE 8080
 

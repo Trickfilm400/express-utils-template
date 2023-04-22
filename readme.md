@@ -1,6 +1,6 @@
 # express-utils-example
 
-This is a example repo for how to se the [express-utils](https://github.com/Kopf02/express-utils) package by [kopf02](https://github.com/kopf02).
+This is an example repo for how to se the [express-utils](https://github.com/Kopf02/express-utils) package by [kopf02](https://github.com/kopf02).
 
 
 # Available ENV Variables

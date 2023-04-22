@@ -1,9 +1,4 @@
-import {
-  App,
-  Config,
-  dbConfig,
-  logger,
-} from '@kopf02/express-utils';
+import { App, Config, dbConfig, logger } from '@kopf02/express-utils';
 //Convict config
 new Config(dbConfig('mongodb', 'rest-api'));
 
