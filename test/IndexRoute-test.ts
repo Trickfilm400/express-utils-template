@@ -47,7 +47,9 @@ describe('IndexRoute', () => {
       .request(app.getServer())
       .get('/health')
       .then((res) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         chai.expect(res.body.data.date).to.be.a('number');
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         chai.expect(res.body.data.healthy).to.be.true;
         chai.expect(res).to.have.status(200);
       })

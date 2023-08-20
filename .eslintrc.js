@@ -7,11 +7,13 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
   ],
   plugins: ['prettier', '@typescript-eslint'],
   parserOptions: {
-    ecmaVersion: 2020,
+    project: 'tsconfig.eslint.json',
+    ecmaVersion: 2023,
   },
   parser: '@typescript-eslint/parser',
   rules: {

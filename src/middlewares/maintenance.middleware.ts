@@ -13,6 +13,7 @@ class CustomMaintenanceMiddleware extends MaintenanceMiddleware {
     return Promise.resolve(false);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected setEnabledStatus(_newState: boolean): Promise<void> {
     //todo
     /**

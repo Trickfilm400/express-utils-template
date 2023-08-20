@@ -5,7 +5,7 @@ import { Config, dbConfig } from '@kopf02/express-utils';
 import { CustomConvictConfig } from '../src/config/interface';
 
 describe('Convict Config', () => {
-  before('create test config file', async () => {
+  before('create test config file', () => {
     process.env.NODE_ENV = 'test';
     fs.writeFileSync(
       path.join(__dirname, '..', 'test.json'),

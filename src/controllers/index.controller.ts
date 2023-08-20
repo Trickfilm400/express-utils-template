@@ -38,6 +38,7 @@ class IndexController {
   public healthCheck = (
     _req: Request,
     res: Response<HTTPResponse<IHealthCheck>>,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _next: NextFunction
   ) => {
     res.json({ data: this.IndexService.healthCheck() });
