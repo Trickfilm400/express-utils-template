@@ -26,6 +26,9 @@ LABEL org.opencontainers.image.authors="Nico W. <info@ni-wa.de>"
 
 EXPOSE 8080
 
+# set node env to production because it will not be set as default anywhere
+ENV NODE_ENV=production
+
 HEALTHCHECK --interval=10s --retries=2 CMD npx docker-healthcheck || exit 1
 
 # copy files from build stage

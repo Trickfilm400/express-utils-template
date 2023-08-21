@@ -4,7 +4,10 @@ new Config(dbConfig('mongodb', 'rest-api'));
 
 import { router } from './routes';
 
-logger.level = 'silly';
+//set log level to "silly" for dev environment, but not for production to prevent logging issues
+if (Config.getConfig().get('env') !== 'production') logger.level = 'silly';
+//the default in the logger object is 'info', so we need to set the configured value here, that the loglevel is set correctly
+else logger.level = Config.getConfig().get('loglevel');
 
 export class ExpressServer {
   private app: App;
@@ -25,7 +28,7 @@ export class ExpressServer {
     // });
     //logger.info('Trying to connect to database...');
     /** without any database or so */
-    this.app.init();
+    this.app.init(Config.getConfig().get('ssl'));
     this.app.getServer().set('etag', false);
     this.app.listen(Config.getConfig().get('port'));
     cb?.();
