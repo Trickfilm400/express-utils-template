@@ -2,10 +2,10 @@ import { App, Config, dbConfig, logger } from '@kopf02/express-utils';
 //Convict config
 new Config(dbConfig('mongodb', 'rest-api'));
 
-import indexRoute from './routes/index.route';
+import { router } from './routes';
 
 logger.level = 'silly';
-const app = new App(new indexRoute());
+const app = new App(router);
 
 if (process.env.NODE_ENV !== 'test') {
   logger.info('Trying to connect to database...');

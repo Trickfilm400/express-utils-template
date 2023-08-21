@@ -1,19 +1,13 @@
-import { NextFunction, Request, Response } from 'express';
+import { IRoute, NextFunction, Request, Response } from 'express';
 import IndexService from '../services/IndexService';
 import { IHealthCheck, IVersion } from '../interfaces/IndexService.interface';
-import { HTTPResponse } from '@kopf02/express-utils';
+import { HTTPResponse, RouterController } from '@kopf02/express-utils';
 
-class IndexController {
+export class IndexVersionController implements RouterController {
   public IndexService = new IndexService();
-
-  public index = (_req: Request, res: Response, next: NextFunction): void => {
-    try {
-      res.json({ data: null });
-    } catch (error) {
-      next(error);
-    }
-  };
-
+  initializeRoutes(router: IRoute): void {
+    router.get(this.version);
+  }
   public version = (
     _req: Request,
     res: Response<HTTPResponse<IVersion>>,
@@ -25,7 +19,13 @@ class IndexController {
       next(error);
     }
   };
+}
 
+export class IndexHealthCheckController implements RouterController {
+  public IndexService = new IndexService();
+  initializeRoutes(router: IRoute): void {
+    router.get(this.healthCheck);
+  }
   /**
    * Return some health information, especial for the docker healthcheck
    * @author Nico
@@ -45,4 +45,16 @@ class IndexController {
   };
 }
 
-export default IndexController;
+export class IndexController implements RouterController {
+  public IndexService = new IndexService();
+  initializeRoutes(router: IRoute): void {
+    router.get(this.index);
+  }
+  public index = (_req: Request, res: Response, next: NextFunction): void => {
+    try {
+      res.json({ data: null });
+    } catch (error) {
+      next(error);
+    }
+  };
+}
