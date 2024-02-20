@@ -6,6 +6,7 @@
   "include": [
     "src",
     ".eslintrc.js",
+    "prettier.config.js",
     "test"
   ]
 }

@@ -26,4 +26,4 @@ This is an example repo for how to se the [express-utils](https://github.com/Kop
 - [ ] Write better readme
 
 
-2022-2023 - [Trickfilm400](https://github.com/trickfilm400)
+&copy; 2022-2024 - [Trickfilm400](https://github.com/trickfilm400)
