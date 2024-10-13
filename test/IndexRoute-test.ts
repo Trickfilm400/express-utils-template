@@ -1,4 +1,5 @@
 import * as chai from 'chai';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 import chaiHttp = require('chai-http');
 
 import { App } from '@kopf02/express-utils';
@@ -47,9 +48,8 @@ describe('IndexRoute', () => {
       .request(app.getServer())
       .get('/health')
       .then((res) => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         chai.expect(res.body.data.date).to.be.a('number');
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         chai.expect(res.body.data.healthy).to.be.true;
         chai.expect(res).to.have.status(200);
       })
